@@ -1,1 +1,12 @@
-canvas{border:2px solid;}
+#canvas {
+    border: 3px solid;
+}
+
+button {
+    margin: 1px;
+    display: inline;
+}
+
+ul {
+    list-style-type: none;
+}
