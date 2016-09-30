@@ -18,36 +18,37 @@
             <div class="col-md-12">
                 <canvas id="canvas" ng-model="canvas"></canvas>
 
-                    <button ng-click="newRect()" class="btn btn-success">Add Rectangle</button>
-                    <button ng-click="newCircle()" class="btn btn-success">Add Circle</button>
-                    <button ng-click='changeColor()' class="btn btn-primary">Change Color</button> <input type="color" ng-model='fill'>
+                <button ng-click="newRect()" class="btn btn-success">Add Rectangle</button>
+                <button ng-click="newCircle()" class="btn btn-success">Add Circle</button>
+                <button ng-click='changeColor()' class="btn btn-primary">Change Color</button>
+                <input type="color" ng-model='fill'>
 
             </div>
-          </div>
-          <div class="row col-md-12">
+        </div>
+        <div class="row col-md-12">
 
             <button ng-click="delete()" class="btn btn-warning">Delete</button>
             <button ng-click="clear()" class="btn btn-danger">Clear</button>
 
-          </div>
-            <form>
-                <input type="text" ng-model="name">
-                <button ng-disabled='!name.length' ng-click="save($index)" class="btn btn-success">Save</button>
-            </form>
-
-            <p ng-repeat="file in data">
-                {{file.name}}
-                <button ng-click="load($index)">Load</button>
-                <span ng-click="removeItem($index)">&times;</span>
-            </p>
         </div>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
-        <script src='http://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.6.4/fabric.min.js'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js'></script>
-        <script src='https://cdn.jsdelivr.net/satellizer/0.15.5/satellizer.min.js'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+        <form>
+            <input type="text" ng-model="name">
+            <button ng-disabled='!name.length' ng-click="save($index)" class="btn btn-success">Save</button>
+        </form>
 
-        <script src="js/index.js"></script>
-    </body>
+            <table ng-repeat="file in data">
+            <tr><td>{{file.name}}</td>
+            <td><button ng-click="load($index)">Load</button></td>
+            <td><span ng-click="removeItem($index)">&times;</span></td></tr>
+    </table>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.6.4/fabric.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/satellizer/0.15.5/satellizer.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+</body>
 
 </html>
