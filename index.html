@@ -6,49 +6,58 @@
         <title>Shapes</title>
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-social.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
     </head>
 
     <body ng-app="myApp" ng-controller="Editor">
-        <div class='row col-md-12'>
-            <button ng-click="authenticate('facebook')">Sign in with Facebook</button>
-            <button ng-click="authenticate('google')">Sign in with Google</button>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <canvas id="canvas" ng-model="canvas"></canvas>
+        <div id="page-wrap">
+            <div class='row col-sm-12'>
+                <button ng-click="authenticate('facebook')" class="btn btn-facebook">Sign in with Facebook</button>
+                <button ng-click="authenticate('google')" class="btn btn-google">Sign in with Google</button>
+            </div>
+            <br>
+            <hr>
+            <h1>Shapes</h1>
+            <div class="row">
+                <div class="col-sm-4">
+                    <button ng-click="newRect()" class="btn btn-success">Add Rectangle</button>
+                    <button ng-click="newCircle()" class="btn btn-success">Add Circle</button>
+                    <button ng-click='changeColor()' class="btn btn-primary">Change Color</button>
+                    <input type="color" ng-model='fill'>
+                    <br><br>
+                    <button ng-click="delete()" class="btn btn-warning">Delete</button>
+                    <button ng-click="clear()" class="btn btn-danger">Clear</button>
+                </div>
+                <div class="col-sm-8">
+                    <canvas id="canvas" ng-model="canvas"></canvas>
+                </div>
+            </div>
+            <br>
+            <div class="row col-sm-12" id ="save">
+                <input type="text" ng-model="name" class="input-md">
+                <button ng-disabled='!name.length' ng-click="save($index)" class="btn btn-success">Save</button>
 
-                <button ng-click="newRect()" class="btn btn-success">Add Rectangle</button>
-                <button ng-click="newCircle()" class="btn btn-success">Add Circle</button>
-                <button ng-click='changeColor()' class="btn btn-primary">Change Color</button>
-                <input type="color" ng-model='fill'>
-
+                <table ng-repeat="file in data">
+                    <tr>
+                        <td>{{file.name}}</td>
+                        <td>
+                            <button ng-click="load($index)">Load</button>
+                        </td>
+                        <td>
+                            <span ng-click="removeItem($index)" class="glyphicon glyphicon-remove"></span>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
-        <div class="row col-md-12">
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.6.4/fabric.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js'></script>
+        <script src='https://cdn.jsdelivr.net/satellizer/0.15.5/satellizer.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 
-            <button ng-click="delete()" class="btn btn-warning">Delete</button>
-            <button ng-click="clear()" class="btn btn-danger">Clear</button>
-
-        </div>
-        <form>
-            <input type="text" ng-model="name">
-            <button ng-disabled='!name.length' ng-click="save($index)" class="btn btn-success">Save</button>
-        </form>
-
-            <table ng-repeat="file in data">
-            <tr><td>{{file.name}}</td>
-            <td><button ng-click="load($index)">Load</button></td>
-            <td><span ng-click="removeItem($index)">&times;</span></td></tr>
-    </table>
-    </div>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.6.4/fabric.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/satellizer/0.15.5/satellizer.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-
-    <script src="js/index.js"></script>
-</body>
+        <script src="js/index.js"></script>
+    </body>
 
 </html>

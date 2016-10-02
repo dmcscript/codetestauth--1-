@@ -1,12 +1,40 @@
-#canvas {
-    border: 3px solid;
+#page-wrap {
+     width: 800px;
+     height: 900px;
+     margin: 0 auto;
+     background-color: #AA8239;
+}
+h1{
+    text-align: center;
+    text-shadow:2px 2px #553700;
+    color: FFE1AA;
+}
+
+#canvas{
+    border: 5px solid;
+    margin: 5px;
+    padding: 2px;
+    box-shadow: 2px 2px #553700;
 }
 
 button {
-    margin: 1px;
+    margin: 5px;
     display: inline;
 }
 
 ul {
     list-style-type: none;
+}
+tr{
+        background-color: #D4AF6A;
+        text-align: center;
+}
+td{
+    padding: 0 25 0 25;
+
+}
+#save{
+background-color: #553700;
+width: 800px;
+ margin: 0 auto;
 }
