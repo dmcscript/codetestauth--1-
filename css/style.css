@@ -31,6 +31,8 @@ ul {
 table{
     width:800px;
     margin: 0 auto;
+    border-collapse:collapse;
+    table-layout:fixed;
 }
 tr{
         background-color: #5C5393;
@@ -42,5 +44,5 @@ td{
 #save{
 background-color: #555794;
 width: 800px;
- margin: 0 auto;
+margin: 0 auto;
 }
