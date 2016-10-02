@@ -2,19 +2,19 @@
      width: 800px;
      height: 900px;
      margin: 0 auto;
-     background-color: #AA8239;
+     background-color: #3B3176;
 }
 h1{
     text-align: center;
-    text-shadow:2px 2px #553700;
-    color: FFE1AA;
+    text-shadow:2px 2px #3B3176;
+    color: #857DB1;
 }
 
 #canvas{
     border: 5px solid;
     margin: 5px;
     padding: 2px;
-    box-shadow: 2px 2px #553700;
+    box-shadow: 2px 2px #0F083B;
 }
 
 button {
@@ -25,16 +25,19 @@ button {
 ul {
     list-style-type: none;
 }
+table{
+    width:800px;
+    margin: 0 auto;
+}
 tr{
-        background-color: #D4AF6A;
+        background-color: #5C5393;
         text-align: center;
 }
 td{
-    padding: 0 25 0 25;
-
+    color:#0F083B;
 }
 #save{
-background-color: #553700;
+background-color: #555794;
 width: 800px;
  margin: 0 auto;
 }
